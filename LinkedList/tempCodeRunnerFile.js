@@ -1,0 +1,1 @@
+myLinkedList.delete(2)

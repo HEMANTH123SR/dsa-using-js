@@ -28,31 +28,47 @@ class LinkedList {
     this.length++;
   }
 
+  // print() {
+  //   console.log("start");
+  //   console.log(this.head.value);
+  //   while (this.head.next) {
+  //     this.head = this.head.next;
+  //     console.log(this.head.value);
+  //   }
+  //   console.log("end");
+  // }
   print() {
     console.log("start");
-    console.log(this.head.value);
-    while (this.head.next) {
-      this.head = this.head.next;
-      console.log(this.head.value);
+    let current = this.head; // use a separate variable to hold the current node
+    console.log(current.value);
+    while (current.next) {
+      current = current.next;
+      console.log(current.value);
     }
     console.log("end");
   }
+  
 
   insert(value, index) {
     const newNode={
       value:value,
       next:null
     }
-   for(let i=0;this.head.next;i++){
-     if(i==index){
-    newNode.next=this.head.next
-    this.head=newNode
-     }
-     else{
-      this.head = this.head.next
-     }
-        
-   }
+  const postiondeValue=this.trav(index-1)
+  const nextPointer=postiondeValue.next;
+  postiondeValue.next=newNode
+  newNode.next=nextPointer;
+  this.length++;
+  }
+
+  trav(index){
+  let counter=0;
+  let counderedValue=this.head;
+    while(counter!=index){
+   counderedValue=counderedValue.next
+counter++;
+    }
+return counderedValue
   }
 }
 
@@ -65,4 +81,7 @@ newLinkedList.append(62);
 newLinkedList.prepend(20);
 newLinkedList.print();
 newLinkedList.insert(100,1)
+newLinkedList.insert(100,2)
+newLinkedList.insert(100,3)
 newLinkedList.print();
+
