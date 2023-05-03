@@ -69,6 +69,11 @@ class LinkedList{
         }
         return current
     }
+
+    rev(){
+    const t=this.head
+    const h=this.tail
+   
 }
 
 const myLinkedList= new LinkedList(30);
